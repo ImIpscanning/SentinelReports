@@ -1,0 +1,102 @@
+database:
+  type: sqlite
+  sqlite_file: "sentinelreports.db"
+  mysql:
+    host: "localhost"
+    port: 3306
+    database: "sentinelreports"
+    username: "root"
+    password: "change-me"
+    pool_size: 10
+
+settings:
+  server_name: "velocity"
+  language: "es"
+  require_reason: true
+  allow_self_report: false
+  allow_reporting_staff: true
+  notify_staff_on_report: true
+  broadcast_to_staff: true
+
+abuse_protection:
+  enabled: true
+  global_cooldown: "2m"
+  same_target_cooldown: "10m"
+  max_open_reports_per_player: 5
+  block_duplicate_reports: true
+  duplicate_window: "30m"
+  false_report_threshold: 5
+
+reports:
+  default_status: "OPEN"
+  default_priority: "MEDIUM"
+  close_requires_reason: true
+  export_folder: "exports"
+
+discord:
+  enabled: false
+  webhook_url: ""
+  username: "SentinelReports"
+  avatar_url: ""
+  notify_new_report: true
+  notify_critical_report: true
+  notify_report_closed: true
+  notify_report_assigned: true
+  notify_false_report: true
+  cooldown_seconds: 10
+
+categories:
+  cheating:
+    enabled: true
+    name: "&cCheating"
+    priority: "HIGH"
+    material: "DIAMOND_SWORD"
+    description: "Hacks, kill aura, fly, reach, macros."
+  chat_abuse:
+    enabled: true
+    name: "&eChat Abuse"
+    priority: "MEDIUM"
+    material: "PAPER"
+    description: "Insultos, spam, acoso o toxicidad."
+  scam:
+    enabled: true
+    name: "&6Scam"
+    priority: "HIGH"
+    material: "EMERALD"
+    description: "Estafas o trades fraudulentos."
+  bug_abuse:
+    enabled: true
+    name: "&dBug Abuse"
+    priority: "HIGH"
+    material: "REDSTONE"
+    description: "Uso abusivo de bugs."
+  griefing:
+    enabled: true
+    name: "&4Griefing"
+    priority: "HIGH"
+    material: "TNT"
+    description: "Destruccion o sabotaje."
+  toxicity:
+    enabled: true
+    name: "&cToxicity"
+    priority: "MEDIUM"
+    material: "ROTTEN_FLESH"
+    description: "Comportamiento toxico repetido."
+  advertising:
+    enabled: true
+    name: "&bAdvertising"
+    priority: "MEDIUM"
+    material: "OAK_SIGN"
+    description: "Publicidad no permitida."
+  staff_abuse:
+    enabled: true
+    name: "&9Staff Abuse"
+    priority: "CRITICAL"
+    material: "ANVIL"
+    description: "Abuso de permisos de staff."
+  other:
+    enabled: true
+    name: "&fOther"
+    priority: "LOW"
+    material: "NAME_TAG"
+    description: "Otro motivo."

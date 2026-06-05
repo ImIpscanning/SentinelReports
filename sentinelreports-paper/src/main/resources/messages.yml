@@ -1,0 +1,93 @@
+prefix: "&8[&bSentinelReports&8] "
+
+decorations:
+  line: "&8&m------------------------------------"
+  short_line: "&8&m--------------"
+  primary: "&b"
+  secondary: "&f"
+  success: "&a"
+  error: "&c"
+  warning: "&e"
+  muted: "&7"
+
+command_style:
+  header_color: "&b&l"
+  command_color: "&b"
+  description_color: "&7"
+  example_color: "&f"
+  permission_color: "&8"
+  footer_color: "&7"
+
+help:
+  staff_title: "&b&lSentinelReports &8» &fAyuda Staff"
+  player_title: "&b&lSentinelReports &8» &fAyuda"
+  page_footer: "&7Pagina &f%page%&7/&f%pages% &8| &7Usa &f%command% help %next_page%"
+
+hub:
+  staff_title: "&b&lSentinelReports &8» &fPanel Staff"
+  button_format: "&b[%name%] &7%description%"
+  show_only_allowed_buttons: true
+
+errors:
+  no_permission: "&cNo tienes permiso."
+  player_not_found: "&cJugador no encontrado."
+  self_report: "&cNo puedes reportarte a ti mismo."
+  cooldown: "&cDebes esperar &f%time% &cantes de reportar otra vez."
+  duplicate_report: "&cYa hiciste un reporte reciente contra este jugador."
+  max_open_reports: "&cTienes demasiados reportes abiertos."
+  invalid_category: "&cCategoria invalida."
+  invalid_report: "&cEse reporte no existe."
+  invalid_status: "&cEstado invalido."
+  invalid_priority: "&cPrioridad invalida."
+  reason_required: "&cDebes escribir una razon."
+  reason_timeout: "&cSe cancelo el reporte porque no escribiste una razon a tiempo."
+  invalid_link: "&cLa evidencia debe ser texto seguro o un link http/https valido."
+
+success:
+  report_created: "&aReporte creado contra &f%target%&a. ID: &f%id%"
+  report_closed: "&aReporte &f#%id% &acerrado correctamente."
+  report_claimed: "&aTomaste el reporte &f#%id%&a."
+  report_unclaimed: "&aLiberaste el reporte &f#%id%&a."
+  report_assigned: "&aReporte &f#%id% &aasignado a &f%staff%&a."
+  note_added: "&aNota anadida al reporte &f#%id%&a."
+  evidence_added: "&aEvidencia anadida al reporte &f#%id%&a."
+  evidence_removed: "&aEvidencia &f#%evidence_id% &aeliminada."
+  reloaded: "&aConfiguracion recargada correctamente."
+
+report:
+  reason_prompt:
+    - "&8&m------------------------------------"
+    - "&b&lSentinelReports &8» &fNueva razon"
+    - "&7Escribe en el chat la razon del reporte contra &f%target%&7."
+    - "&7Escribe &ccancel &7para cancelar."
+    - "&7Tiempo restante: &f%seconds%s"
+    - "&8&m------------------------------------"
+  created_panel:
+    - "&8&m------------------------------------"
+    - "&b&lSentinelReports &8» &aReporte creado"
+    - "&7ID: &f#%id%"
+    - "&7Reportado: &f%target%"
+    - "&7Categoria: &f%category%"
+    - "&7Prioridad: &f%priority%"
+    - "&7Razon: &f%reason%"
+    - "&8&m------------------------------------"
+  created_staff_alert:
+    - "&8&m------------------------------------"
+    - "&c&lNuevo Reporte &8#%id%"
+    - "&7Reportado: &f%target%"
+    - "&7Reportador: &f%reporter%"
+    - "&7Categoria: &f%category%"
+    - "&7Prioridad: &f%priority%"
+    - "&7Servidor: &f%server%"
+    - "&7Razon: &f%reason%"
+    - "&8&m------------------------------------"
+
+status:
+  open: "Abierto"
+  assigned: "Asignado"
+  reviewing: "En revision"
+  waiting_evidence: "Esperando evidencia"
+  resolved: "Resuelto"
+  rejected: "Rechazado"
+  false_report: "Reporte falso"
+  closed: "Cerrado"

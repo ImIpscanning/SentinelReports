@@ -1,0 +1,175 @@
+main_player_menu:
+  title: "&8SentinelReports"
+  size: 27
+  filler:
+    enabled: true
+    material: "GRAY_STAINED_GLASS_PANE"
+    name: " "
+  items:
+    report_player:
+      slot: 11
+      material: "PLAYER_HEAD"
+      name: "&cReportar jugador"
+      lore:
+        - "&7Reporta a un jugador por romper reglas."
+        - ""
+        - "&eUsa: &f/report <player>"
+    my_reports:
+      slot: 13
+      material: "BOOK"
+      name: "&bMis reportes"
+      lore:
+        - "&7Mira tus reportes abiertos."
+      command: "report status"
+    info:
+      slot: 15
+      material: "PAPER"
+      name: "&fInformacion"
+      lore:
+        - "&7Usa este sistema con responsabilidad."
+        - "&7Los reportes falsos pueden ser sancionados."
+    close:
+      slot: 26
+      material: "BARRIER"
+      name: "&cCerrar"
+
+category_menu:
+  title: "&8Reportar a %target%"
+  size: 45
+  filler:
+    enabled: true
+    material: "BLACK_STAINED_GLASS_PANE"
+    name: " "
+  categories:
+    cheating:
+      slot: 10
+      material: "DIAMOND_SWORD"
+      name: "&cCheating"
+      lore:
+        - "&7Hacks, kill aura, fly, reach, etc."
+    chat_abuse:
+      slot: 12
+      material: "PAPER"
+      name: "&eChat Abuse"
+      lore:
+        - "&7Insultos, spam o toxicidad."
+    scam:
+      slot: 14
+      material: "EMERALD"
+      name: "&6Scam"
+      lore:
+        - "&7Estafas o enganos."
+    griefing:
+      slot: 16
+      material: "TNT"
+      name: "&4Griefing"
+      lore:
+        - "&7Destruccion o sabotaje."
+    bug_abuse:
+      slot: 28
+      material: "REDSTONE"
+      name: "&dBug Abuse"
+      lore:
+        - "&7Abuso de bugs."
+    staff_abuse:
+      slot: 30
+      material: "ANVIL"
+      name: "&9Staff Abuse"
+      lore:
+        - "&7Abuso de permisos."
+    other:
+      slot: 32
+      material: "NAME_TAG"
+      name: "&fOther"
+      lore:
+        - "&7Otro motivo."
+    back:
+      slot: 36
+      material: "ARROW"
+      name: "&eVolver"
+    cancel:
+      slot: 44
+      material: "BARRIER"
+      name: "&cCancelar"
+
+staff_menu:
+  title: "&8SentinelReports Staff"
+  size: 45
+  filler:
+    enabled: true
+    material: "GRAY_STAINED_GLASS_PANE"
+    name: " "
+  items:
+    open_reports:
+      slot: 10
+      material: "BELL"
+      name: "&cReportes abiertos"
+      lore:
+        - "&7Mira reportes pendientes."
+      command: "reports list open"
+      permission: "sentinelreports.staff.list"
+    assigned_reports:
+      slot: 12
+      material: "CLOCK"
+      name: "&eMis asignados"
+      lore:
+        - "&7Reportes asignados a ti."
+      command: "reports list assigned"
+      permission: "sentinelreports.staff.list"
+    all_reports:
+      slot: 14
+      material: "CHEST"
+      name: "&bTodos los reportes"
+      lore:
+        - "&7Vista completa del sistema."
+      command: "reports list"
+      permission: "sentinelreports.staff.list"
+    history:
+      slot: 16
+      material: "BOOK"
+      name: "&fHistorial"
+      lore:
+        - "&7Busca historial con /reports history <player>."
+      command: "reports help history"
+      permission: "sentinelreports.staff.history"
+    stats:
+      slot: 28
+      material: "EMERALD"
+      name: "&aEstadisticas"
+      lore:
+        - "&7Mira estadisticas del sistema."
+      command: "reports stats"
+      permission: "sentinelreports.staff.stats"
+    discord:
+      slot: 30
+      material: "REDSTONE"
+      name: "&dDiscord test"
+      lore:
+        - "&7Prueba el webhook configurado."
+      command: "reports discord test"
+      permission: "sentinelreports.staff.discord"
+    reload:
+      slot: 32
+      material: "REPEATER"
+      name: "&dReload"
+      lore:
+        - "&7Recarga configuracion."
+      command: "reports reload"
+      permission: "sentinelreports.staff.reload"
+    close:
+      slot: 44
+      material: "BARRIER"
+      name: "&cCerrar"
+
+open_reports_menu:
+  title: "&8Reportes abiertos"
+  size: 54
+  priority_materials:
+    LOW: "PAPER"
+    MEDIUM: "BOOK"
+    HIGH: "BELL"
+    CRITICAL: "REDSTONE_BLOCK"
+
+report_detail_menu:
+  title: "&8Reporte #%id%"
+  size: 45

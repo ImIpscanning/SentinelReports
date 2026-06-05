@@ -1,0 +1,60 @@
+name: SentinelReports
+main: com.imipscanning.sentinelreports.paper.SentinelReportsPaperPlugin
+version: ${version}
+api-version: "1.20"
+author: ImIpscanning
+softdepend:
+  - PlaceholderAPI
+  - LuckPerms
+commands:
+  report:
+    aliases: [rep]
+    description: Report a player
+    permission: sentinelreports.report
+  reports:
+    aliases: [reportadmin, rc, sreports]
+    description: Staff report management
+    permission: sentinelreports.staff
+permissions:
+  sentinelreports.admin:
+    default: op
+  sentinelreports.report:
+    default: true
+  sentinelreports.report.staff:
+    default: op
+  sentinelreports.staff:
+    default: op
+  sentinelreports.staff.list:
+    default: op
+  sentinelreports.staff.view:
+    default: op
+  sentinelreports.staff.claim:
+    default: op
+  sentinelreports.staff.assign:
+    default: op
+  sentinelreports.staff.close:
+    default: op
+  sentinelreports.staff.reject:
+    default: op
+  sentinelreports.staff.false:
+    default: op
+  sentinelreports.staff.note:
+    default: op
+  sentinelreports.staff.evidence:
+    default: op
+  sentinelreports.staff.history:
+    default: op
+  sentinelreports.staff.teleport:
+    default: op
+  sentinelreports.staff.stats:
+    default: op
+  sentinelreports.staff.reload:
+    default: op
+  sentinelreports.staff.discord:
+    default: op
+  sentinelreports.staff.export:
+    default: op
+  sentinelreports.bypass.cooldown:
+    default: op
+  sentinelreports.bypass.limit:
+    default: op
