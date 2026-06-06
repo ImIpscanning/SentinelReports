@@ -1,62 +1,168 @@
-# SentinelReports
+<div align="center">
 
-SentinelReports is a production-oriented reports system for Minecraft networks using Velocity as proxy and Paper/Purpur backends.
+<img src="https://capsule-render.vercel.app/api?type=waving&color=0:111827,50:374151,100:E5E7EB&height=210&section=header&text=SentinelReports&fontSize=56&fontColor=FFFFFF&animation=fadeIn&fontAlignY=38&desc=Production-ready%20reports%20system%20for%20Minecraft%20networks&descAlignY=58&descSize=15" alt="SentinelReports Header" />
 
-It is built with Java 21, Gradle Kotlin DSL, Adventure, MiniMessage-style formatting, HikariCP, SQLite/MySQL storage, versioned migrations, Discord webhooks, GUI menus, staff workflows, anti-abuse controls and a public API.
+<img src="https://readme-typing-svg.demolab.com?font=JetBrains+Mono&size=19&duration=2600&pause=900&color=E5E7EB&center=true&vCenter=true&width=820&height=40&lines=Manage+player+reports+professionally.;Track+evidence,+notes+and+staff+workflow.;Built+for+Velocity,+Paper+and+Purpur.;Report.+Review.+Resolve." alt="Typing Animation" />
 
-## What It Does
+<p>
+  <img src="https://img.shields.io/badge/Java-21-ED8B00?style=for-the-badge&logo=openjdk&logoColor=white" alt="Java 21" />
+  <img src="https://img.shields.io/badge/Platform-Velocity%20%7C%20Paper%20%7C%20Purpur-374151?style=for-the-badge" alt="Platforms" />
+  <img src="https://img.shields.io/badge/Database-SQLite%20%7C%20MySQL%20%7C%20MariaDB-4B5563?style=for-the-badge" alt="Database" />
+  <img src="https://img.shields.io/badge/Focus-Report%20Management-111827?style=for-the-badge" alt="Report Management" />
+</p>
 
-- Player-to-player reports with categories and custom reasons.
-- Configurable report categories, priorities and cooldowns.
-- Report states: `OPEN`, `ASSIGNED`, `REVIEWING`, `WAITING_EVIDENCE`, `RESOLVED`, `REJECTED`, `FALSE_REPORT`, `CLOSED`.
-- Evidence and internal staff notes.
-- Claim, unclaim and assign workflow for staff.
-- History by reporter and by target.
-- SQLite for local/testing and MySQL/MariaDB for production.
-- Discord webhook alerts.
-- JSON and HTML exports.
-- Paper GUI for players and staff.
-- Velocity global commands and staff alerts.
-- PlaceholderAPI expansion on Paper.
-- Public API through `SentinelReportsProvider`.
+</div>
 
-## What It Is Not
+---
 
-SentinelReports is not an anticheat, anti-exploit, login/auth system or full punishment core. It can trigger external punishment commands from configuration in future integrations, but its core responsibility is report management.
+## Overview
+
+**SentinelReports** is a production-oriented report management system for Minecraft networks using **Velocity** as proxy and **Paper/Purpur** backend servers.
+
+It provides a complete workflow for player reports, staff review, evidence tracking, internal notes, report history, Discord alerts, GUI menus, exports and anti-abuse protections.
+
+```diff
++ Player-to-player reports
++ Staff claim, assign and review workflow
++ Evidence and internal notes
++ Report history by reporter and target
++ Paper GUI for players and staff
++ Velocity global commands and staff alerts
++ SQLite for local testing
++ MySQL/MariaDB for production networks
++ Discord webhook alerts
++ JSON and HTML exports
++ PlaceholderAPI support
++ Public API for integrations
+
+- Not an anticheat
+- Not an anti-exploit plugin
+- Not a login/auth system
+- Not a full punishment core
+```
+
+---
+
+## Modules
+
+```txt
+sentinelreports-common
+Shared models, storage, migrations, services, API, command logic,
+messages, report workflow and anti-abuse utilities.
+
+sentinelreports-paper
+Paper/Purpur plugin with player commands, staff commands, GUI menus,
+PlaceholderAPI support and backend report interactions.
+
+sentinelreports-velocity
+Velocity proxy plugin with global commands, network-wide report access
+and staff alerts.
+```
+
+---
+
+## Features
+
+```txt
+Configurable report categories
+Custom report reasons
+Report priorities
+Cooldown protection
+Duplicate report prevention
+Evidence system
+Internal staff notes
+Claim / unclaim workflow
+Assign workflow
+Report status management
+Reporter and target history
+Discord webhook notifications
+JSON and HTML report exports
+Paper GUI menus
+Velocity global commands
+PlaceholderAPI expansion
+Public API through SentinelReportsProvider
+```
+
+---
+
+## Report States
+
+```txt
+OPEN
+ASSIGNED
+REVIEWING
+WAITING_EVIDENCE
+RESOLVED
+REJECTED
+FALSE_REPORT
+CLOSED
+```
+
+---
 
 ## Build
 
-```bash
-gradle clean test shadowJar
+### Requirements
+
+```txt
+Java 21
+Gradle Wrapper included
 ```
 
-Artifacts:
+### Build command
 
-- `sentinelreports-paper/build/libs/SentinelReports-Paper-1.0.0.jar`
-- `sentinelreports-velocity/build/libs/SentinelReports-Velocity-1.0.0.jar`
+```bash
+./gradlew clean test shadowJar
+```
 
-Java 21 is required.
+### Generated artifacts
+
+```txt
+sentinelreports-paper/build/libs/SentinelReports-Paper-1.0.0.jar
+sentinelreports-velocity/build/libs/SentinelReports-Velocity-1.0.0.jar
+```
+
+---
 
 ## Installation
 
-### Paper/Purpur
+### Paper / Purpur
 
-1. Build the project.
-2. Put `SentinelReports-Paper-1.0.0.jar` in `plugins/`.
+```txt
+1. Build or download SentinelReports-Paper-1.0.0.jar.
+2. Place it inside the backend server plugins/ folder.
 3. Start the server once.
-4. Edit `plugins/SentinelReports/config.yml`, `messages.yml` and `gui.yml`.
-5. Restart or run `/reports reload`.
+4. Edit config.yml, messages.yml and gui.yml.
+5. Restart the server or run /reports reload.
+```
+
+```txt
+paper-server/
+└── plugins/
+    └── SentinelReports-Paper-1.0.0.jar
+```
 
 ### Velocity
 
-1. Put `SentinelReports-Velocity-1.0.0.jar` in `plugins/`.
-2. Start the proxy once.
-3. Edit `plugins/sentinelreports/config.yml`.
-4. Use the same MySQL/MariaDB database as the Paper servers for network-wide state.
+```txt
+1. Build or download SentinelReports-Velocity-1.0.0.jar.
+2. Place it inside the Velocity plugins/ folder.
+3. Start the proxy once.
+4. Edit plugins/sentinelreports/config.yml.
+5. Use the same MySQL/MariaDB database as Paper servers for network-wide state.
+```
+
+```txt
+velocity/
+└── plugins/
+    └── SentinelReports-Velocity-1.0.0.jar
+```
+
+---
 
 ## Database
 
-Default mode is SQLite:
+SQLite is the default option for local testing.
 
 ```yaml
 database:
@@ -64,7 +170,7 @@ database:
   sqlite_file: "sentinelreports.db"
 ```
 
-Production networks should use MySQL/MariaDB:
+For production networks, MySQL or MariaDB is recommended.
 
 ```yaml
 database:
@@ -78,11 +184,17 @@ database:
     pool_size: 10
 ```
 
-Migrations are versioned under `sentinelreports-common/src/main/resources/db/migration`.
+Migrations are versioned under:
 
-## Discord
+```txt
+sentinelreports-common/src/main/resources/db/migration
+```
 
-Enable webhook alerts in `config.yml`:
+---
+
+## Discord Webhooks
+
+SentinelReports can send Discord alerts for important report activity.
 
 ```yaml
 discord:
@@ -93,87 +205,112 @@ discord:
   notify_report_closed: true
 ```
 
-Tokens are never shown in chat or logs by command output.
+Webhook URLs are never shown in chat or command output.
+
+---
 
 ## Player Commands
 
-- `/report`
-- `/report help`
-- `/report <player>`
-- `/report <player> <category> <reason>`
-- `/report cancel`
-- `/report status`
-- `/report history`
+```txt
+/report
+/report help
+/report <player>
+/report <player> <category> <reason>
+/report cancel
+/report status
+/report history
+```
+
+---
 
 ## Staff Commands
 
-- `/reports`, `/reports gui`, `/reports hub`
-- `/reports help [page|player|staff|evidence|notes|history|admin]`
-- `/reports list [open|assigned|closed|status]`
-- `/reports view <id>`
-- `/reports claim <id>`
-- `/reports unclaim <id>`
-- `/reports assign <id> <staff>`
-- `/reports status <id> <status>`
-- `/reports priority <id> <priority>`
-- `/reports close <id> <reason>`
-- `/reports reject <id> <reason>`
-- `/reports false <id> <reason>`
-- `/reports evidence add <id> <text/link>`
-- `/reports evidence list <id>`
-- `/reports evidence remove <id> <evidenceId>`
-- `/reports note add <id> <note>`
-- `/reports note list <id>`
-- `/reports history <player>`
-- `/reports against <player>`
-- `/reports by <player>`
-- `/reports teleport <id>`
-- `/reports server <id>`
-- `/reports notify <id>`
-- `/reports stats [staff]`
-- `/reports reload`
-- `/reports discord test`
-- `/reports export <id> <json|html>`
+```txt
+/reports
+/reports gui
+/reports hub
+/reports help [page|player|staff|evidence|notes|history|admin]
+/reports list [open|assigned|closed|status]
+/reports view <id>
+/reports claim <id>
+/reports unclaim <id>
+/reports assign <id> <staff>
+/reports status <id> <status>
+/reports priority <id> <priority>
+/reports close <id> <reason>
+/reports reject <id> <reason>
+/reports false <id> <reason>
+/reports evidence add <id> <text/link>
+/reports evidence list <id>
+/reports evidence remove <id> <evidenceId>
+/reports note add <id> <note>
+/reports note list <id>
+/reports history <player>
+/reports against <player>
+/reports by <player>
+/reports teleport <id>
+/reports server <id>
+/reports notify <id>
+/reports stats [staff]
+/reports reload
+/reports discord test
+/reports export <id> <json|html>
+```
+
+---
 
 ## Permissions
 
-- `sentinelreports.admin`
-- `sentinelreports.report`
-- `sentinelreports.report.staff`
-- `sentinelreports.staff`
-- `sentinelreports.staff.list`
-- `sentinelreports.staff.view`
-- `sentinelreports.staff.claim`
-- `sentinelreports.staff.assign`
-- `sentinelreports.staff.close`
-- `sentinelreports.staff.reject`
-- `sentinelreports.staff.false`
-- `sentinelreports.staff.note`
-- `sentinelreports.staff.evidence`
-- `sentinelreports.staff.history`
-- `sentinelreports.staff.teleport`
-- `sentinelreports.staff.stats`
-- `sentinelreports.staff.reload`
-- `sentinelreports.staff.discord`
-- `sentinelreports.staff.export`
-- `sentinelreports.bypass.cooldown`
-- `sentinelreports.bypass.limit`
+```txt
+sentinelreports.admin
+sentinelreports.report
+sentinelreports.report.staff
+sentinelreports.staff
+sentinelreports.staff.list
+sentinelreports.staff.view
+sentinelreports.staff.claim
+sentinelreports.staff.assign
+sentinelreports.staff.close
+sentinelreports.staff.reject
+sentinelreports.staff.false
+sentinelreports.staff.note
+sentinelreports.staff.evidence
+sentinelreports.staff.history
+sentinelreports.staff.teleport
+sentinelreports.staff.stats
+sentinelreports.staff.reload
+sentinelreports.staff.discord
+sentinelreports.staff.export
+sentinelreports.bypass.cooldown
+sentinelreports.bypass.limit
+```
+
+---
 
 ## GUI
 
-Paper includes:
+Paper/Purpur includes configurable GUI menus for players and staff.
 
-- Player main report menu.
-- Category selection menu.
-- Staff hub menu.
-- Open reports menu.
-- Report detail menu with claim, evidence, notes, teleport, critical and resolve actions.
+```txt
+Player main report menu
+Category selection menu
+Staff hub menu
+Open reports menu
+Report detail menu
+Claim, evidence, notes, teleport, critical and resolve actions
+```
 
-All menu titles, items, slots, materials and lore are configurable in `gui.yml`.
+All menu titles, items, slots, materials and lore are configurable in:
+
+```txt
+gui.yml
+```
+
+---
 
 ## Anti-Abuse
 
-Configured in `config.yml`:
+SentinelReports includes configurable protection against report spam and abuse.
 
 ```yaml
 abuse_protection:
@@ -186,9 +323,36 @@ abuse_protection:
   false_report_threshold: 5
 ```
 
-The system blocks self-reports, duplicate recent reports, cooldown abuse and excessive open reports unless the player has bypass permissions.
+The system can block:
 
-## API
+```txt
+Self-reports
+Duplicate recent reports
+Cooldown abuse
+Excessive open reports
+Repeated false report behavior
+```
+
+Bypass permissions are available for trusted staff or specific groups.
+
+---
+
+## PlaceholderAPI
+
+Paper placeholders:
+
+```txt
+%sentinelreports_open_reports%
+%sentinelreports_assigned_reports%
+%sentinelreports_player_reports%
+%sentinelreports_player_false_reports%
+```
+
+---
+
+## Public API
+
+Other plugins can interact with SentinelReports through the public API.
 
 ```java
 SentinelReportsAPI api = SentinelReportsProvider.get();
@@ -200,29 +364,162 @@ api.addNote(15L, "Checked logs", staffUuid, "Moderator");
 api.getOpenReports();
 ```
 
-Use `SentinelReportsProvider.getOptional()` if your plugin should stay safe when SentinelReports is not installed.
+Use this if your plugin should stay safe when SentinelReports is not installed:
 
-## PlaceholderAPI
+```java
+SentinelReportsProvider.getOptional();
+```
 
-Paper placeholders:
+---
 
-- `%sentinelreports_open_reports%`
-- `%sentinelreports_assigned_reports%`
-- `%sentinelreports_player_reports%`
-- `%sentinelreports_player_false_reports%`
+## Export System
+
+Reports can be exported for evidence, review or staff records.
+
+```txt
+/reports export <id> json
+/reports export <id> html
+```
+
+Supported formats:
+
+```txt
+JSON
+HTML
+```
+
+---
+
+## Staff Workflow
+
+```txt
+Player creates report
+        ↓
+Staff receives alert
+        ↓
+Report is reviewed
+        ↓
+Staff claims or assigns the report
+        ↓
+Evidence and notes are added
+        ↓
+Report is resolved, rejected or marked false
+        ↓
+Report can be exported if needed
+```
+
+---
 
 ## Production Recommendations
 
-- Use MySQL/MariaDB for networks.
-- Keep Discord webhook URLs private.
-- Give staff granular permissions instead of only `sentinelreports.admin`.
-- Set sensible cooldowns for public servers.
-- Keep exports outside publicly served web roots unless intentional.
-- Back up the database before major plugin upgrades.
+```txt
+Use MySQL/MariaDB for network setups.
+Keep Discord webhook URLs private.
+Use granular staff permissions instead of only sentinelreports.admin.
+Set sensible cooldowns for public servers.
+Keep exports outside public web roots unless intentional.
+Back up the database before major plugin upgrades.
+```
+
+---
 
 ## Troubleshooting
 
-- `Player not found`: direct report commands require the target to be online.
-- `Invalid category`: verify `categories.<id>.enabled: true`.
-- Discord test does nothing: verify `discord.enabled: true` and `webhook_url`.
-- SQLite locked: use MySQL/MariaDB for multi-server setups.
+```txt
+Player not found
+Direct report commands require the target to be online.
+
+Invalid category
+Verify categories.<id>.enabled: true.
+
+Discord test does nothing
+Verify discord.enabled: true and webhook_url.
+
+SQLite locked
+Use MySQL or MariaDB for multi-server setups.
+```
+
+---
+
+## Project Structure
+
+```txt
+SentinelReports/
+├── .github/
+│   └── workflows/
+├── gradle/
+│   └── wrapper/
+├── sentinelreports-common/
+├── sentinelreports-paper/
+├── sentinelreports-velocity/
+├── build.gradle.kts
+├── settings.gradle.kts
+├── gradlew
+├── gradlew.bat
+└── README.md
+```
+
+---
+
+## Technologies
+
+<p align="center">
+  <img src="https://raw.githubusercontent.com/devicons/devicon/master/icons/java/java-original.svg" width="46" height="46" alt="Java" />
+  <img src="https://raw.githubusercontent.com/devicons/devicon/master/icons/gradle/gradle-original.svg" width="46" height="46" alt="Gradle" />
+  <img src="https://raw.githubusercontent.com/devicons/devicon/master/icons/mysql/mysql-original.svg" width="46" height="46" alt="MySQL" />
+  <img src="https://raw.githubusercontent.com/devicons/devicon/master/icons/sqlite/sqlite-original.svg" width="46" height="46" alt="SQLite" />
+  <img src="https://raw.githubusercontent.com/devicons/devicon/master/icons/git/git-original.svg" width="46" height="46" alt="Git" />
+  <img src="https://raw.githubusercontent.com/devicons/devicon/master/icons/github/github-original.svg" width="46" height="46" alt="GitHub" />
+</p>
+
+---
+
+## Philosophy
+
+```txt
+Report.
+Review.
+Document.
+Resolve.
+```
+
+SentinelReports is designed to make moderation workflows cleaner, more organized and easier to audit across Minecraft networks.
+
+---
+
+## Status
+
+```diff
++ Velocity and Paper/Purpur support
++ Player report system
++ Staff workflow
++ Evidence and notes
++ Discord webhook alerts
++ Paper GUI
++ Anti-abuse protection
++ JSON and HTML exports
++ PlaceholderAPI expansion
++ Public API
+```
+
+---
+
+## Author
+
+Developed by **ipscanning**.
+
+```txt
+Better reports.
+Cleaner moderation.
+Stronger staff workflow.
+```
+
+<div align="center">
+
+<img src="https://readme-typing-svg.demolab.com?font=JetBrains+Mono&size=18&duration=2600&pause=1000&color=E5E7EB&center=true&vCenter=true&width=720&height=40&lines=Thanks+for+checking+out+SentinelReports.;Built+for+Minecraft+network+moderation.;Report.+Review.+Resolve." alt="Footer Typing" />
+
+<strong>SentinelReports</strong> — Minecraft Network Reports System
+
+<img src="https://capsule-render.vercel.app/api?type=waving&color=0:E5E7EB,50:374151,100:111827&height=110&section=footer" alt="Footer" />
+
+</div>
